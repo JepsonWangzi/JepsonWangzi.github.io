@@ -10,7 +10,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
     <meta name="description" content="">
-    <title>hello wzc · To Be No.1</title>
+    <title>node.js · To Be No.1</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -191,7 +191,7 @@
                 <a href="/" >wangzi blog</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">hello wzc</a>
+                <a href="#" class="post-name">node.js</a>
             </div>
     </div>
     
@@ -223,7 +223,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            hello wzc
+            node.js
             <!-- 404 -->
             
         </h1>
@@ -347,15 +347,36 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        
+        <p>node.js</p>
+<p>process.stdout.write(“”)   标准输出</p>
+<p>写文件</p>
+<p>fs.writeFile(“文件路径”，“文件的内容”，“文件编码格式”，回掉函数)  函数参数err </p>
+<p>如果成功了，err是null</p>
+<p>如果失败了，err是失败的信息</p>
+<p>想用这个方法先要引入</p>
+<p>var   fs =require(“fs”);</p>
+<p>只有global全局的内置方法才能直接使用，否则需要使用require定义才能使用</p>
+<p>读文件</p>
+<p>fs.readFile(“路径”，“编码格式”，function（err,data）{    </p>
+<p>   })</p>
+<p>如果不传编码格式，读取的数据是一个buffer 对象，可以调用toString方法传递编码格式作为参数来转换</p>
+<p>创建文件夹</p>
+<p>fs.mkdir(“文件夹名”，function（）{   </p>
+<p>})</p>
+<p>同步创建文件</p>
+<p>fs.writeSync( “文件名”，“内容”)；</p>
+<p>console.log(66666)</p>
+<p>由于是同步，不需要回调函数</p>
+<p>结果是先创建文件才能读取666</p>
+
     </article>
     <!-- 前后页  -->
     <ul class="post-paginator">
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href= "/2018/04/21/hello-222/" title= hello 222 >
-                    <div class="nextTitle">hello 222</div>
+                <a href= "/2018/04/21/hello-222/" title= 前端模块化 >
+                    <div class="nextTitle">前端模块化</div>
                 </a>
             
         </li>
@@ -518,29 +539,28 @@ top:50vh;
     
     
     
-    <div class="total-archive"> Total : 4 </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-archive"> Total : 5 </div>
     
     <div class="post-archive">
     
     
     
     
-    <div class="archive-year"> 2018 </div>
+    <div class="archive-year"> Invalid date </div>
     <ul class="year-list">
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2018/04/21/hello-222/" >hello 222</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2018/04/21/hello-wzc/" >hello wzc</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/19</span><a class="archive-post-title" href= "/2018/04/19/my-new-post/" >my new post</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2018/04/19/hello-world/" >Hello World</a>
         </li>
     
     
@@ -549,12 +569,27 @@ top:50vh;
     
         </ul>
     
-    <div class="archive-year"> Invalid date </div>
+    <div class="archive-year"> 2018 </div>
     <ul class="year-list">
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2018/04/19/hello-world/" >Hello World</a>
+            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2018/04/21/hello-222/" >前端模块化</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2018/04/21/git命令/" >git命令</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2018/04/21/hello-wzc/" >node.js</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span><a class="archive-post-title" href= "/2018/04/19/my-new-post/" >my new post</a>
         </li>
     
     </div>
