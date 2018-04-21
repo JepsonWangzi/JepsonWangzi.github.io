@@ -10,7 +10,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
     <meta name="description" content="">
-    <title>node.js · To Be No.1</title>
+    <title>my new post · To Be No.1</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -191,7 +191,7 @@
                 <a href="/" >wangzi blog</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">node.js</a>
+                <a href="#" class="post-name">my new post</a>
             </div>
     </div>
     
@@ -223,7 +223,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            node.js
+            my new post
             <!-- 404 -->
             
         </h1>
@@ -241,7 +241,7 @@ height:50vh;
             
             <div class="post-intro-meta">
                 <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                <span class="post-intro-time">2018/04/21</span>
+                <span class="post-intro-time">2018/04/19</span>
                 
                 <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                     <span class="iconfont-archer">&#xe602;</span>
@@ -347,27 +347,45 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>node.js</p>
-<p>process.stdout.write(“”)   标准输出</p>
-<p>写文件</p>
-<p>fs.writeFile(“文件路径”，“文件的内容”，“文件编码格式”，回掉函数)  函数参数err </p>
-<p>如果成功了，err是null</p>
-<p>如果失败了，err是失败的信息</p>
-<p>想用这个方法先要引入</p>
-<p>var   fs =require(“fs”);</p>
-<p>只有global全局的内置方法才能直接使用，否则需要使用require定义才能使用</p>
-<p>读文件</p>
-<p>fs.readFile(“路径”，“编码格式”，function（err,data）{    </p>
-<p>   })</p>
-<p>如果不传编码格式，读取的数据是一个buffer 对象，可以调用toString方法传递编码格式作为参数来转换</p>
-<p>创建文件夹</p>
-<p>fs.mkdir(“文件夹名”，function（）{   </p>
-<p>})</p>
-<p>同步创建文件</p>
-<p>fs.writeSync( “文件名”，“内容”)；</p>
-<p>console.log(66666)</p>
-<p>由于是同步，不需要回调函数</p>
-<p>结果是先创建文件才能读取666</p>
+        <h1 id="hexo创建博客"><a href="#hexo创建博客" class="headerlink" title="hexo创建博客"></a>hexo创建博客</h1><h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><ul>
+<li>npm安装的时候，默认会访问npmjs.org这个网站，国外的，把镜像地址改成了淘宝的。</li>
+</ul>
+<ul>
+<li>修改npm镜像地址</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org --global</span><br><span class="line">npm config <span class="built_in">set</span> disturl https://npm.taobao.org/dist --global</span><br></pre></td></tr></table></figure>
+<ul>
+<li>安装hexo</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line"></span><br><span class="line">hexo -v  <span class="comment"># 查看hexo的版本信息</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>初始化博客</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 新建一个目录  blog</span></span><br><span class="line">hexo init  <span class="comment"># 初始化</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>生成静态页面</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate   <span class="comment"># 生成静态页面	</span></span><br><span class="line">hexo g          <span class="comment"># 生成静态页面（简写）</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>启动服务</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo server   <span class="comment"># 启动服务</span></span><br><span class="line">hexo s        <span class="comment"># 启动服务(简写)</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>访问站点</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:4000/  <span class="comment"># 通过这个地址就可以访问了</span></span><br></pre></td></tr></table></figure>
+<h2 id="hexo常见命令"><a href="#hexo常见命令" class="headerlink" title="hexo常见命令"></a>hexo常见命令</h2><ul>
+<li><code>hexo n &#39;博客标题&#39;</code>创建一篇新的博客</li>
+<li><code>hexo g</code> 生成博客</li>
+<li><code>hexo d</code> 发布博客</li>
+</ul>
+<p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">hexo中文文档</a></p>
+<p><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">hexo next主题文档</a></p>
+<h2 id="博客格式"><a href="#博客格式" class="headerlink" title="博客格式"></a>博客格式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 我的第一篇博客<span class="comment">//(注意冒号后面有一个空格不能丢。)</span></span><br><span class="line">date: <span class="number">2018</span><span class="number">-04</span><span class="number">-02</span> <span class="number">01</span>:<span class="number">12</span>:<span class="number">29</span> <span class="comment">//指定博客的日期</span></span><br><span class="line">tags: </span><br><span class="line">  - 学习</span><br><span class="line">  - 随笔</span><br><span class="line">  - 心情</span><br><span class="line">categories: </span><br><span class="line">  - javascript</span><br><span class="line">---</span><br><span class="line"># 我是大标题</span><br><span class="line">这后面的内容就跟普通的markdown文件没什么区别</span><br></pre></td></tr></table></figure>
+<h2 id="发布配置"><a href="#发布配置" class="headerlink" title="发布配置"></a>发布配置</h2><p>安装hexo的部署工具<code>npm install hexo-deployer-git --save</code></p>
+<p>修改<code>_config.yml</code>文件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: 网站标题</span><br><span class="line">subtitle: 子标题</span><br><span class="line">description: 无</span><br><span class="line">author: 作者名称</span><br><span class="line">language: zh-CN</span><br><span class="line">timezone:</span><br><span class="line"></span><br><span class="line"># 发布配置</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: github仓库地址</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<p>使用<code>hexo d</code>发布博客</p>
 
     </article>
     <!-- 前后页  -->
@@ -375,17 +393,12 @@ height:50vh;
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href= "/2018/04/21/hello-222/" title= 前端模块化 >
-                    <div class="nextTitle">前端模块化</div>
+                <a href= "/2018/04/19/hello-world/" title= Hello World >
+                    <div class="nextTitle">Hello World</div>
                 </a>
             
         </li>
         <li class="previous">
-            
-                <div class="prevSlogan">Previous Post</div>
-                <a href= "/2018/04/19/hello-world/" title= Hello World >
-                    <div class="prevTitle">Hello World</div>
-                </a>
             
         </li>
     </ul>
@@ -490,7 +503,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo创建博客"><span class="toc-number">1.</span> <span class="toc-text">hexo创建博客</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装步骤"><span class="toc-number">1.1.</span> <span class="toc-text">安装步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo常见命令"><span class="toc-number">1.2.</span> <span class="toc-text">hexo常见命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客格式"><span class="toc-number">1.3.</span> <span class="toc-text">博客格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#发布配置"><span class="toc-number">1.4.</span> <span class="toc-text">发布配置</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -548,12 +561,28 @@ top:50vh;
     
     
     
+    
+    
     <div class="total-archive"> Total : 5 </div>
     
     <div class="post-archive">
     
     
     
+    
+    <div class="archive-year"> 2018 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2018/04/21/前端模块化/" >前端模块化</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
     
     <div class="archive-year"> Invalid date </div>
     <ul class="year-list">
@@ -574,22 +603,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2018/04/21/hello-222/" >前端模块化</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2018/04/21/git命令/" >git命令</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2018/04/21/hello-wzc/" >node.js</a>
+            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2018/04/21/node.js/" >node.js</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/19</span><a class="archive-post-title" href= "/2018/04/19/my-new-post/" >my new post</a>
+            <span class="archive-post-date">04/19</span><a class="archive-post-title" href= "/2018/04/19/hexo创建博客日志/" >my new post</a>
         </li>
     
     </div>
