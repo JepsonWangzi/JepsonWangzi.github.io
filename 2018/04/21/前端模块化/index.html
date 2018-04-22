@@ -347,15 +347,32 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>前端模块化<br>前提在使用模块化之前，在当前页面引入插件require.js<br>1: 定义模块：语法define（“模块名”，[依赖项]，function（）{<br>模块的全部代码cosole(我是A模块哈哈)}）<br>模块名一般建议不写，叫做匿名模块  还要起名字的叫做（具名模块）；</p>
-<p>2:引入模块：语法<br>require（[模块名，写明路径]），function（）{模块引入完成时调用 执行这里面的代码（异步）console。log（我是A模块哈哈）}）<br>模块名不要.js后缀<br>定义，并且引入过后，主要执行的结果是我是A模块哈哈我是A模块哈哈</p>
-<p><strong>但是 由于定于的模块是一个闭包，调用完成后就被销毁了，所以要有一种方法暴露出去  导出 即可。</strong><br><strong>require（[模块名，写明路径]），function（）{**</strong>模块引入完成时调用 执行这里面的代码（异步）<strong>**     </strong><br><strong>var age=100;**</strong>function song(){<strong>**alert(6666);</strong><br><strong>return{**</strong>age:age,<strong>**song:song</strong><br><strong>};**</strong>//这样这个定义的模块就有了导出项，别人可以使用了，但是问题来了，别人怎么使用呢！！！<strong>**}）</strong><br>有导出项的模块怎么使用，即使用返回时，怎么拿到！！！<br>  在引入模块的回掉函数写一个形参<br><strong>require（[模块名，写明路径]），function（mk）{**</strong>mk.song();<strong><strong>mk.age;</strong></strong>}）<strong>
-</strong>mk就是一个形参，接收引进了模块暴露的数据，是一个对象<strong>
-</strong>这样模块引进的同时，数据也可以调用<strong><strong>结果就是</strong></strong>6666 100**</p>
-<p>4：引入多个模块，多个模块都有返回值，怎么解决！！<br>require（[a,b,c]，function(a.b.c){</p>
+        <h2 id="前端模块化"><a href="#前端模块化" class="headerlink" title="前端模块化"></a>前端模块化</h2><ul>
+<li>1 前提在使用模块化之前，在当前页面引入插件require.js</li>
+</ul>
+<ul>
+<li>1: 定义模块：语法define（“模块名”，[依赖项]，function（）{<br>模块的全部代码cosole(我是A模块哈哈)}）<br>模块名一般建议不写，叫做匿名模块  还要起名字的叫做（具名模块）；</li>
+</ul>
+<ul>
+<li>2:引入模块：语法</li>
+</ul>
+<p>require（[模块名，写明路径]），function（）{模块引入完成时调用 执行这里面的代码（异步）console。log（我是A模块哈哈）}）<br>模块名不要.js后缀<br>定义，并且引入过后，主要执行的结果是我是A模块哈哈我是A模块哈哈</p>
+<p>但是 由于定于的模块是一个闭包，调用完成后就被销毁了，所以要有一种方法暴露出去  导出 即可。<strong>
+</strong>require（[模块名，写明路径]），function（）{<strong><strong>模块引入完成时调用 执行这里面的代码（异步）</strong></strong>     <strong>
+</strong>var age=100;<strong><strong>function song(){</strong></strong>alert(6666);<strong>
+</strong>return{<strong><strong>age:age,</strong></strong>song:song<strong>
+</strong>};<strong><strong>//这样这个定义的模块就有了导出项，别人可以使用了，但是问题来了，别人怎么使用呢！！！</strong></strong>}）<strong><br>有导出项的模块怎么使用，即使用返回时，怎么拿到！！！<br>  在引入模块的回掉函数写一个形参
+</strong>require（[模块名，写明路径]），function（mk）{<strong><strong>mk.song();</strong></strong>mk.age;<strong>**}）</strong><br><strong>mk就是一个形参，接收引进了模块暴露的数据，是一个对象</strong><br><strong>这样模块引进的同时，数据也可以调用**</strong>结果就是<strong>**6666 100</strong></p>
+<ul>
+<li>4：引入多个模块，多个模块都有返回值，怎么解决！！<br>require（[a,b,c]，function(a.b.c){</li>
+</ul>
 <p>}）<br>一般形参和数组中的模块是一一对应的，注意对应和顺序，有几个导出项，就要写几个形参  一般没有形参的可以用下划线表示<br>优化，不用返回值的模块因日可以写在后面，这样这个模块的形参在最后就可以不写了!!!</p>
-<p>5 依赖项define（“模块名”，[c]，function（mc）{mc.xxxxxxx(就可以用了)<br>}）<br>假如定义的是b模块 。C是依赖项，想用c的导出项，也是给一个形参</p>
-<p>6 模块的路径<br>一般像jQuery主流的插件 都是有导出项的 支持模块化的</p>
+<ul>
+<li>5 依赖项define（“模块名”，[c]，function（mc）{mc.xxxxxxx(就可以用了)<br>}）<br>假如定义的是b模块 。C是依赖项，想用c的导出项，也是给一个形参</li>
+</ul>
+<ul>
+<li>6 模块的路径<br>一般像jQuery主流的插件 都是有导出项的 支持模块化的</li>
+</ul>
 <p>路径很深的情况下不好找，于是有了方法require.config({基础路径：一般是网站的决定路径；baseUrl:’’paths:{   chajian:’’   chajian2:’’}</p>
 <p>})<br><strong>paths:{**</strong>   chajian:’’<strong>**}  这一部分是的paths是配置的插件的路径</strong>chajian 这是自定义取的别名，防止真正的插件名字太长，可以替换的 后面的是 基础路径设置完成下面的相对路径</p>
 <p>然后在导入插件的时候就可以用别名了require（[<strong>chajian,chajian2</strong>]，function(){</p>
@@ -363,8 +380,26 @@ height:50vh;
 <p>假如有的插件不支持模块化，但是有要依赖项比如 bootstrap 和wangedtor 他俩不支持但是有依赖与jQuery<br>给不支持模块化的第三方插件使用<br> require.config({基础路径：一般是网站的决定路径；baseUrl:’’paths:{   chajian:’’   chajian2:’’bootstrap:’’wangeidtor}</p>
 <p>})<br>shim{</p>
 <p>}</p>
-<p>一个项目的总代码</p>
-<p>//配置路径require.config({//公共的基础路径baseUrl:’/baixiu/04-baixiu/assets/vendors/‘,// 配置模块的 路径和别名paths:{jquery:’jquery/jquery’,template:’template/template-web’,wangEditor:’wangEidtor/wangEditor’,moment:’moment/moment’,posts:’posts’,//本身不支持模块化，但是有又依赖于jquerypagination:’pagination/jquery.pagination’,bootstrap:’bootstrap/js/bootstrap’},//给不支持模块化的第三方插件 指定依赖项shim:{//给两个模块绑定依赖关系pagination:{deps:[‘jquery’] //依赖项一定是数组格式},bootstrap:{deps:[‘jquery’] //依赖项一定是数组格式}}});<br>//引入模块require([‘posts’],function(){});<br>只需引入posts  前提posts中要导入其他的插件<br>define([‘template’,’moment’,’wangEditor’,’pagination’,’bootstrap’],function(template,moment,wangEditor,pagination,bootstrap){<br>把$(function ) 换成define就行啦!!!!!</p>
+<p>##一个项目的总代码</p>
+<ul>
+<li>1配置路径<br>require.config({</li>
+<li>2公共的基础路径<br>baseUrl:’/baixiu/04-baixiu/assets/vendors/‘,</li>
+<li>3 配置模块的 路径和别名<br>paths:{<br>jquery:’jquery/jquery’,<br>template:’template/template-web’,<br>wangEditor:’wangEidtor/wangEditor’,<br>moment:’moment/moment’,<br>posts:’posts’,</li>
+<li>本身不支持模块化，但是有又依赖于jquery<br>pagination:’pagination/jquery.pagination’,<br>bootstrap:’bootstrap/js/bootstrap’<br>},</li>
+<li>给不支持模块化的第三方插件 指定依赖项<br>shim:{</li>
+<li>给两个模块绑定依赖关系<br>pagination:{<br>deps:[‘jquery’] //依赖项一定是数组格式<br>},<br>bootstrap:{<br>deps:[‘jquery’] //依赖项一定是数组格式<br>}<br>}<br>});</li>
+</ul>
+<ul>
+<li>引入模块<br>require([‘posts’],function(){});</li>
+</ul>
+<p>只需引入posts<br>前提posts中要导入其他的插件</p>
+<ul>
+<li>define([‘template’,’moment’,’wangEditor’,’pagination’,’bootstrap’],</li>
+<li><p>function(template,moment,wangEditor,pagination,bootstrap){</p>
+</li>
+<li><p>把$(function ) 换成define就行啦!!!!!</p>
+</li>
+</ul>
 
     </article>
     <!-- 前后页  -->
@@ -487,7 +522,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前端模块化"><span class="toc-number">1.</span> <span class="toc-text">前端模块化</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -541,12 +576,39 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-archive"> Total : 5 </div>
     
     <div class="post-archive">
     
     
     
+    
+    <div class="archive-year"> 2018 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2018/04/21/git命令/" >git命令</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2018/04/21/前端模块化/" >前端模块化</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
     
     <div class="archive-year"> Invalid date </div>
     <ul class="year-list">
@@ -564,16 +626,6 @@ top:50vh;
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2018/04/21/前端模块化/" >前端模块化</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2018/04/21/git命令/" >git命令</a>
-        </li>
     
     
         <li class="archive-post-item">
