@@ -10,7 +10,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
     <meta name="description" content="">
-    <title>node.js · To Be No.1</title>
+    <title>FW切图工具 · To Be No.1</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -191,7 +191,7 @@
                 <a href="/" >wangzi blog</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">node.js</a>
+                <a href="#" class="post-name">FW切图工具</a>
             </div>
     </div>
     
@@ -223,7 +223,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            node.js
+            FW切图工具
             <!-- 404 -->
             
         </h1>
@@ -241,7 +241,7 @@ height:50vh;
             
             <div class="post-intro-meta">
                 <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                <span class="post-intro-time">2018/04/21</span>
+                <span class="post-intro-time">2018/04/22</span>
                 
                 <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                     <span class="iconfont-archer">&#xe602;</span>
@@ -347,50 +347,80 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>##node.js</p>
-<ul>
-<li><p>process.stdout.write(“”)   标准输出</p>
-</li>
-<li><p>写文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fs.writeFile(&quot;文件路径&quot;，“文件的内容”，“文件编码格式”，回掉函数)  函数参数err</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>如果成功了，err是null</p>
-<p>如果失败了，err是失败的信息</p>
-<p>想用这个方法先要引入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var   fs =require(&quot;fs&quot;);</span><br></pre></td></tr></table></figure></p>
-<p>只有global全局的内置方法才能直接使用，否则需要使用require定义才能使用</p>
-<ul>
-<li><p>读文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fs.readFile(&quot;路径&quot;，“编码格式”，function（err,data）&#123;    </span><br><span class="line"></span><br><span class="line">   &#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果不传编码格式，读取的数据是一个buffer 对象，可以调用toString方法传递编码格式作为参数来转换</p>
-</li>
-<li><p>创建文件夹</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fs.mkdir(&quot;文件夹名&quot;，function（）&#123;   </span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>同步创建文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fs.writeSync( &quot;文件名&quot;，“内容”)；</span><br><span class="line"></span><br><span class="line">console.log(66666)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>由于是同步，不需要回调函数</p>
-<p>结果是先创建文件才能读取666</p>
+        <h4 id="FW简易切图："><a href="#FW简易切图：" class="headerlink" title="FW简易切图："></a>FW简易切图：</h4><pre><code>- 打开文件 ctrl+o  或者直接拖拽进去
+- 选择切片工具  K
+- 把需要的区域量出来
+- 通过缩放工具（z）去看看有没有量的很准确
+- 通过Q工具（选择里面是缩放）去缩放切片
+- 按住空格键不放 鼠标进行拖拽可以移动画布
 
+- 缩小：ctrl + -
+
+
+- 滴管工具：i
+</code></pre><p>#####1、ps软件</p>
+<pre><code>- 处理位图的一个软件
+
+- 学习的目的：
+* 1、简单使用ps
+* 2、重点在于切图
+* 3、简单修改设计图
+* 4、便于团队沟通
+
+##### 图层：图层本质上就可以看做是一张一张相同大小透明的纸，一个完整图像本质上是由一个又一个的图层堆叠而成
+
+有了图层可以方便我们去修改，而如果单单只有一张图片处理起来是比较麻烦的
+
+##### ps的源文件名：psd  保留图层 利于后期修改
+图片的文件名：jpg  png  gif 等 没有图层，不利于修改
+
+#####切片工具：C 量尺寸 量完之后双击切片即可得到宽度和高度，一旦当切片多的情况下，需要选择某一个切片就需要运用到切片选择工具（也是c，但是要切换）
+
+- 放大：快捷键 Z  在属性菜单栏下将细微缩放干掉
+- 缩小：ctrl + -
+
+#####移动工具：V  移动工具  常用
+    选择图层：v工具状态下，在属性菜单栏下将自动选择勾选去掉 将组改成图层之后，选择对应的图片只需要按住ctrl不放，在图像上单击即可找到对应的图层
+吸管：i  吸取的结果会在前景色里面找到。点击前景色即可获取颜色
+切片工具：C  （选择c工具组里面的某一个 shift+c）
+
+#####切图：
+    选择切片工具将需要切的区域框选出来 调整大小（一定是在c工具状态下）
+    三键（ctrl+alt+shift）+s（导出web使用格式）一定要选择（选中的切片）
+    注意：ps会在你选择的目录下找images文件夹，如果没有ps会自己新建一个
+
+    删除切片：在c状态下，直接在切片有右键即可删除切片
+    选择切片：在c状态下，按住ctrl不放 直接点击切片即可选中
+
+
+#####如何切一张透明的图片：
+    1、先选中这个图片的图层 （按住ctrl不放 然后点击该图像即可跳到这个图像对应的图层）
+    2、在改图层上右键转换成智能对象
+    3、在图层中心范围内双击 点击确定
+    4、三键+s保存 （这个保存需要将图片文件放到对应的文件夹里面去）
+
+其他了解：
+修改单位：ctrl+k 打开首选项 ==&gt; 单位与标尺 ==&gt; 单位面板修改即可
+拉辅助线：前提：必须有标尺（ctrl+r）直接从标尺处开始拖拽
+新建文件：ctrl+n  分辨率 72
+选区工具：m
+填充前景色：alt+退格键
+填充背景色：ctrl+退格键
+缩放的快捷键：ctrl+t
+合并图层：ctrl+e
+撤销操作：ctrl+alt+z
+</code></pre>
     </article>
     <!-- 前后页  -->
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2018/04/21/前端模块化/" title= 前端模块化 >
-                    <div class="nextTitle">前端模块化</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2018/04/19/hello-world/" title= hexo命令 >
-                    <div class="prevTitle">hexo命令</div>
+                <a href= "/2018/04/22/数组即字符串的常用方法/" title= 数组即字符串的常用方法 >
+                    <div class="prevTitle">数组即字符串的常用方法</div>
                 </a>
             
         </li>
@@ -496,7 +526,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#FW简易切图："><span class="toc-number">1.</span> <span class="toc-text">FW简易切图：</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
