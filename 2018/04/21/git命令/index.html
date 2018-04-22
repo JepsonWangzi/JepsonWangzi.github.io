@@ -347,62 +347,112 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>git 重置</p>
-<p>reset –hard    版本号    重置了这个版本，在所有区域都重置了</p>
-<p>将来不小心误操作了，提交了，可以回退某个版本</p>
-<p>reset –soft     版本号    只重置了仓库区</p>
-<p>reset –mixed 版本号    重置，只剩下工作区 把暂存区和仓库区都重置了</p>
-<p>git 忽视文件（有的文件不希望git管理提交）</p>
-<p>在文件目录中创建一个  .gitignore </p>
-<p>把不想提交的文件名写在这个文件里即可</p>
-<p>把自己也写进去</p>
-<p>git 分支操作</p>
-<p>git branch 查看分支，master是默认的主分支</p>
-<p>分支其实本质上就是一个指针</p>
-<p>当新提交了一个版本，当前的指针会指向最新生成的版本   当前颜色是绿色，有小菊花</p>
-<p>创建分支</p>
-<p>git branch login 新建一个登陆的分支</p>
-<p>git branch 可以查看所有分支</p>
-<p>git 中有一个HEAD指针永远指向当前分支</p>
-<p>切换分支</p>
-<p>git checkout login  切换分支为登陆的分支  在这之后，master分支都没有登陆功能，给客户看的时候就不会有bug</p>
-<p>当登陆功能写完时，切换master分支   git checkout master</p>
-<p>并且希望login的内容合并master分支上</p>
-<p>git merge login 这样就何在一起了</p>
-<p>删除分支 </p>
-<p>git branch -d login (前提login要切换到其他分支，并合并才能删除)</p>
-<p>创建分支的步骤：</p>
+        <h3 id="git-重置"><a href="#git-重置" class="headerlink" title="git 重置"></a>git 重置</h3><ul>
+<li><p>reset –hard    版本号    重置了这个版本，在所有区域都重置了</p>
+<p>  将来不小心误操作了，提交了，可以回退某个版本</p>
+</li>
+<li><p>reset –soft     版本号    只重置了仓库区</p>
+</li>
+<li><p>reset –mixed 版本号    重置，只剩下工作区 把暂存区和仓库区都重置了</p>
+</li>
+</ul>
+<hr>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> git 忽视文件（有的文件不希望git管理提交）</span><br><span class="line"></span><br><span class="line">* 在文件目录中创建一个  .gitignore </span><br><span class="line"></span><br><span class="line">* 把不想提交的文件名写在这个文件里即可</span><br><span class="line"></span><br><span class="line">* 把自己也写进去</span><br></pre></td></tr></table></figure>
+<h3 id="git-分支操作"><a href="#git-分支操作" class="headerlink" title="git 分支操作"></a>git 分支操作</h3><ul>
+<li><p>git branch 查看分支，master是默认的主分支</p>
+</li>
+<li><p>分支其实本质上就是一个指针</p>
+</li>
+<li><p>当新提交了一个版本，当前的指针会指向最新生成的版本   当前颜色是绿色，有小菊花</p>
+</li>
+</ul>
+<p>#####创建分支</p>
+<ul>
+<li><p>git branch login 新建一个登陆的分支</p>
+</li>
+<li><p>git branch 可以查看所有分支</p>
+</li>
+<li><p>git 中有一个HEAD指针永远指向当前分支</p>
+</li>
+</ul>
+<p>#####切换分支</p>
+<ul>
+<li><p>git checkout login  切换分支为登陆的分支  在这之后，master分支都没有登陆功能，给客户看的时候就不会有bug</p>
+</li>
+<li><p>当登陆功能写完时，切换master分支   git checkout master</p>
+</li>
+<li><p>并且希望login的内容合并master分支上</p>
+</li>
+<li><p>git merge login 这样就何在一起了</p>
+</li>
+</ul>
+<p>#####删除分支 </p>
+<ul>
+<li>git branch -d login (前提login要切换到其他分支，并合并才能删除)</li>
+</ul>
+<p>###创建分支的步骤：</p>
+<blockquote>
 <p>1：在写另一个功能不想被别人看到的时候先创建分支 git branch login</p>
+</blockquote>
+<blockquote>
 <p>2:要把新建的分支指向这个功能 git chekout login  然后这个时候就可以开始写代码了,然后写的代码包括一开始写的代码（master阶段），如果切换到master分支时，不会显示login分支的内容 </p>
+</blockquote>
+<blockquote>
 <p>3：最后写完了 把分支指向主分支 git checkout master</p>
+</blockquote>
+<blockquote>
 <p>4:最后要主分支master合并login即可  git merge login   这个时候login的内容和master一开始的内容就合并了</p>
+</blockquote>
+<blockquote>
 <p>5：这个时候分支就可以删除了 git branch -d login;</p>
+</blockquote>
+<blockquote>
 <p>git checkout -b 分支名  创建并且切换</p>
-<p>多个分支合并的冲突问题</p>
-<p>git ：当先合并一个的时候，原理是指针会带着master指向那个分支，是祖辈分支可以快速合并，但是在继续合并其他分支的时候，由于分支带着master跑到了其他分支，再合并就不是祖辈关系了，导致合并冲突，不能快速合并</p>
+</blockquote>
+<h3 id="多个分支合并的冲突问题"><a href="#多个分支合并的冲突问题" class="headerlink" title="多个分支合并的冲突问题"></a>多个分支合并的冲突问题</h3><ul>
+<li>git ：当先合并一个的时候，原理是指针会带着master指向那个分支，是祖辈分支可以快速合并，但是在继续合并其他分支的时候，由于分支带着master跑到了其他分支，再合并就不是祖辈关系了，导致合并冲突，不能快速合并</li>
+</ul>
 <p>解决方案：删除冲突产生的符号标记，并删除，然后重新add commit 就行了</p>
-<h2 id="git对比"><a href="#git对比" class="headerlink" title="git对比"></a>git对比</h2><p># 查看工作区与暂存区的不同</p>
+<h2 id="git对比"><a href="#git对比" class="headerlink" title="git对比"></a>git对比</h2><ul>
+<li>查看工作区与暂存区的不同</li>
+</ul>
 <p>git diff</p>
-<p># 查看暂存区与仓库区的不同</p>
+<ul>
+<li>查看暂存区与仓库区的不同</li>
+</ul>
 <p>git diff –cached</p>
-<p># 查看工作区与仓库区的不同，HEAD表示最新的那次提交</p>
+<ul>
+<li>查看工作区与仓库区的不同，HEAD表示最新的那次提交</li>
+</ul>
 <p>git diff HEAD</p>
-<p># 查看两个版本之间的不同</p>
+<ul>
+<li>查看两个版本之间的不同</li>
+</ul>
 <p>git diff c265262 de4845b</p>
-<p>github常见项目</p>
-<p>克隆远程仓库</p>
+<p>###github常见项目</p>
+<ul>
+<li>克隆远程仓库</li>
+</ul>
 <p>git clone  仓库地址 文件夹名称</p>
-<p>提交到远程仓库</p>
-<p>git push +地址 分支名（master）</p>
+<ul>
+<li><p>提交到远程仓库</p>
+</li>
+<li><p>git push +地址 分支名（master）</p>
+</li>
+</ul>
 <p>提交过一次 再次提交可以把地址改为origin就行 （origin是克隆的时候保存下来的）</p>
-<p>git pull 获取远程仓库可以直接偷过来用</p>
-<p>远程仓库的冲突问题；</p>
-<p>假如好几个人上传同一个项目，远程仓库被修改了，在 git pull 下来的时候就会和一开始的代码不一样发生冲突</p>
-<p>解决方案：删除冲突的符号并重新 add commit </p>
-<p>最后 git pull 在验证一遍，在git push 就行了</p>
-<p>git remote 查看地址的快捷名</p>
-<p>git remote add bi别名 给地址增加其他的名字</p>
-<p>SSH非对称加密</p>
+<ul>
+<li>git pull 获取远程仓库可以直接偷过来用</li>
+</ul>
+<ul>
+<li><p>git remote 查看地址的快捷名</p>
+</li>
+<li><p>git remote add bi别名 给地址增加其他的名字</p>
+</li>
+</ul>
+<ul>
+<li>SSH非对称加密</li>
+</ul>
 <p>私钥 个人</p>
 <p>公钥 GitHub</p>
 
@@ -522,7 +572,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git对比"><span class="toc-number">1.</span> <span class="toc-text">git对比</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#git-重置"><span class="toc-number">1.</span> <span class="toc-text">git 重置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-分支操作"><span class="toc-number">2.</span> <span class="toc-text">git 分支操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多个分支合并的冲突问题"><span class="toc-number">3.</span> <span class="toc-text">多个分支合并的冲突问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git对比"><span class="toc-number"></span> <span class="toc-text">git对比</span></a>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -576,32 +626,12 @@ top:50vh;
     
     
     
-    
-    
-    
-    
-    
-    
     <div class="total-archive"> Total : 5 </div>
     
     <div class="post-archive">
     
     
     
-    
-    <div class="archive-year"> 2018 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2018/04/21/前端模块化/" >前端模块化</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
     
     <div class="archive-year"> Invalid date </div>
     <ul class="year-list">
@@ -619,6 +649,11 @@ top:50vh;
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2018/04/21/前端模块化/" >前端模块化</a>
+        </li>
     
     
         <li class="archive-post-item">
