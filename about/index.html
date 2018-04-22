@@ -10,7 +10,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
     <meta name="description" content="">
-    <title>To Be No.1</title>
+    <title>about · To Be No.1</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -175,10 +175,8 @@
 </head>
 
     
-        <body class="home-body">
     
-    
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
@@ -196,34 +194,21 @@
 
 
 
-height:50vh;
-
 >
     
     <!-- 主页  -->
-    
-    
-    <!-- 文章页  -->
             
-    <div class="site-intro-img" style="background-image: url(/intro/index-bg1.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            wangzi blog
-            <!-- 文章页  -->
-            
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
-            
-            
-                梦想是留给那些有准备的人
-            
-            <!-- 文章页  -->
             
         </p>
         <!-- 文章页meta -->
@@ -310,264 +295,34 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
+            <main class="main post-page">
+    <article class="article-entry">
+        
+    </article>
+    <!-- 前后页  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
     
+    <!--PC版-->
+
+    <!--PC版-->
+
+
     
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/04/21/git命令/" >
-                
-                    <span>git命令</span>
-            </a>
-            <div class="abstract-content">
-                git 重置
-reset –hard    版本号    重置了这个版本，在所有区域都重置了
-  将来不小心误操作了，提交了，可以回退某个版本
-
-reset –soft     版本号    只重置了仓库区
-
-reset –mixed 版本号    重置，只剩下工作区 把暂存区和仓库区都重置了
-
-
-
- 1234567 git 忽视文件（有的文件不希望git管理提交）* 在文件目录中创建一个  .gitignore * 把不想提交的文件名写在这个文件里即可* 把自己也写进去
-git 分支操作
-git branch 查看分支，master是默认的主分支
-
-分支其实本质上就是一个指针
-
-当新提...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/21</span>
-                </div>
-                <!-- tags  -->
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/04/21/前端模块化/" >
-                
-                    <span>前端模块化</span>
-            </a>
-            <div class="abstract-content">
-                前端模块化
-1 前提在使用模块化之前，在当前页面引入插件require.js
-
-
-1: 定义模块：语法define（“模块名”，[依赖项]，function（）{
-
-模块的全部代码cosole(我是A模块哈哈)}）
-模块名一般建议不写，叫做匿名模块  还要起名字的叫做（具名模块）；
-
-2:引入模块：语法
-
-require（[模块名，写明路径]），function（）{模块引入完成时调用 执行这里面
-的代码（异步）console。log（我是A模块哈哈）}）
-模块名不要.js后缀
-定义，并且引入过后，主要执行的结果是我是A模块哈哈我是A模块哈哈
-但是 由于定于的模块是一个闭包，调用完成后就...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/21</span>
-                </div>
-                <!-- tags  -->
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/04/21/node.js/" >
-                
-                    <span>node.js</span>
-            </a>
-            <div class="abstract-content">
-                ##node.js
-
-process.stdout.write(“”)   标准输出
-
-写文件
-1fs.writeFile(&quot;文件路径&quot;，“文件的内容”，“文件编码格式”，回掉函数)  函数参数err
-
-
-如果成功了，err是null
-如果失败了，err是失败的信息
-想用这个方法先要引入1var   fs =require(&quot;fs&quot;);
-只有global全局的内置方法才能直接使用，否则需要使用require定义才能使用
-
-读文件
-123fs.readFile(&quot;路径&quot;，“编码格式”，function（err,data）&#123...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/21</span>
-                </div>
-                <!-- tags  -->
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/04/19/hello-world/" >
-                
-                    <span>hexo命令</span>
-            </a>
-            <div class="abstract-content">
-                Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-More info: Writing
-Run server1$ hexo server
-More...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/19</span>
-                </div>
-                <!-- tags  -->
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/04/19/hexo创建博客日志/" >
-                
-                    <span>my new post</span>
-            </a>
-            <div class="abstract-content">
-                hexo创建博客安装步骤
-npm安装的时候，默认会访问npmjs.org这个网站，国外的，把镜像地址改成了淘宝的。
-
-
-修改npm镜像地址
-
-12npm config set registry https://registry.npm.taobao.org --globalnpm config set disturl https://npm.taobao.org/dist --global
-
-安装hexo
-
-123npm install -g hexo-clihexo -v  # 查看hexo的版本信息
-
-初始化博客
-
-12# 新建一个目录  bloghexo init  # 初始化
-
-...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/19</span>
-                </div>
-                <!-- tags  -->
-                
-            </div>
-        </article>
-    
-    <!-- paginator  -->
-    
+    <!-- 评论 -->
 </main>
             <!-- profile -->
-            
-            <div class="profile">
-    <img class="profile-avatar" src= /avatar/misters.jpg >
-    <div class="profile-name">mister wang</div>
-    
-    <div class="profile-signature">
-        witness me
-    </div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
-            
-                <a href="mailto:738191841@qq.com" class="iconfont-archer email" title=email ></a>
-            
-        
-    
-        
-            
-                <a href="https://github.com/JepsonWangzi/JepsonWangzi.github.io" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
-    
-        
-            
-                <span class="iconfont-archer wechat" title=wechat>
-                  
-                  <img class="profile-qr" src="/assets/example_qr.png" />
-                </span>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-    </div>
-    
-    
-        <div class="friends">
-            <div>FRIENDS</div>
-            
-                
-                    <span>
-                        <a href= //www.baidu.com target="_black">friendA</a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href= //www.google.com target="_black">friendB</a>
-                    </span>
-                
-            
-                
-            
-        </div>
-    
-    
-        <div class="about-me">
-            <a href = "/about" >ABOUT ME</a>
-        </div>
-    
-</div>
             
         </div>
         <footer class="footer footer-unloaded">
