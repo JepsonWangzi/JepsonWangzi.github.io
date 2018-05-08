@@ -315,6 +315,26 @@ height:50vh;
     
     
         <article class="index-post">
+            <a class="abstract-title" href = "/2018/05/08/vuex的使用/" >
+                
+                    <span>vuex的使用</span>
+            </a>
+            <div class="abstract-content">
+                1：使用npm下载 vue  vuex2:  引入vue 和vuex3：在页面上创建实例vm  和vuex的实例  store12345678910111213141516171819202122232425262728const store = new Vuex.Store(&#123;state: &#123;count: 0&#125;,mutations: &#123;increment (state) &#123;state.count+=1&#125;&#125;,getters:&#123;&#125;&#125;)var vm=new Vue(&#123;el:'.app...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/08</span>
+                </div>
+                <!-- tags  -->
+                
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
             <a class="abstract-title" href = "/2018/05/08/组件/" >
                 
                     <span>组件</span>
@@ -571,41 +591,6 @@ git branch 查看分支，master是默认的主分支
 分支其实本质上就是一个指针
 
 当新提...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/21</span>
-                </div>
-                <!-- tags  -->
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/04/21/前端模块化/" >
-                
-                    <span>前端模块化</span>
-            </a>
-            <div class="abstract-content">
-                前端模块化
-1 前提在使用模块化之前，在当前页面引入插件require.js
-
-
-1: 定义模块：语法define（“模块名”，[依赖项]，function（）{
-
-模块的全部代码cosole(我是A模块哈哈)}）
-模块名一般建议不写，叫做匿名模块  还要起名字的叫做（具名模块）；
-
-2:引入模块：语法
-
-require（[模块名，写明路径]），function（）{模块引入完成时调用 执行这里面
-的代码（异步）console。log（我是A模块哈哈）}）
-模块名不要.js后缀
-定义，并且引入过后，主要执行的结果是我是A模块哈哈我是A模块哈哈
-但是 由于定于的模块是一个闭包，调用完成后就...
             </div>
             <div class="abstract-post-meta">
                 <!-- date  -->
@@ -934,7 +919,30 @@ require（[模块名，写明路径]），function（）{模块引入完成时�
     
     
     
-    <div class="total-archive"> Total : 13 </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-archive"> Total : 14 </div>
     
     <div class="post-archive">
     
@@ -946,7 +954,17 @@ require（[模块名，写明路径]），function（）{模块引入完成时�
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">05/08</span><a class="archive-post-title" href= "/2018/05/08/vuex的使用/" >vuex的使用</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">05/08</span><a class="archive-post-title" href= "/2018/05/08/组件/" >组件</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/08</span><a class="archive-post-title" href= "/2018/05/08/vue第三部分/" >vue第三部分</a>
         </li>
     
     
@@ -961,12 +979,17 @@ require（[模块名，写明路径]），function（）{模块引入完成时�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/08</span><a class="archive-post-title" href= "/2018/05/08/vue第三部分/" >vue第三部分</a>
+            <span class="archive-post-date">05/08</span><a class="archive-post-title" href= "/2018/05/08/vue第二部分/" >vue笔记第二部分</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/08</span><a class="archive-post-title" href= "/2018/05/08/vue第二部分/" >vue笔记第二部分</a>
+            <span class="archive-post-date">04/22</span><a class="archive-post-title" href= "/2018/04/22/FW切图工具/" >FW切图工具</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/22</span><a class="archive-post-title" href= "/2018/04/22/vue第一部分/" >vue first Day</a>
         </li>
     
     
@@ -976,7 +999,7 @@ require（[模块名，写明路径]），function（）{模块引入完成时�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/22</span><a class="archive-post-title" href= "/2018/04/22/FW切图工具/" >FW切图工具</a>
+            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2018/04/21/git命令/" >git命令</a>
         </li>
     
     
@@ -1004,17 +1027,7 @@ require（[模块名，写明路径]），function（）{模块引入完成时�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/22</span><a class="archive-post-title" href= "/2018/04/22/vue第一部分/" >vue first Day</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2018/04/21/前端模块化/" >前端模块化</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2018/04/21/git命令/" >git命令</a>
         </li>
     
     
@@ -1065,9 +1078,9 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="css"><span class="iconfont-archer">&#xe60a;</span>css</span>
-    
         <span class="sidebar-category-name" data-categories="git专题"><span class="iconfont-archer">&#xe60a;</span>git专题</span>
+    
+        <span class="sidebar-category-name" data-categories="css"><span class="iconfont-archer">&#xe60a;</span>css</span>
     
         <span class="sidebar-category-name" data-categories="hexo"><span class="iconfont-archer">&#xe60a;</span>hexo</span>
     

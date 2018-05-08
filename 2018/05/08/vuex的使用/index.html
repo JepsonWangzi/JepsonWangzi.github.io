@@ -10,7 +10,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
     <meta name="description" content="">
-    <title>To Be No.1</title>
+    <title>vuex的使用 · To Be No.1</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -65,6 +65,8 @@
 
     <link rel="preload" href= /css/style.css?v=20180317 as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" type="text/css" href= /css/mobile.css?v=20180317 media="(max-width: 980px)"/>
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         
     <link rel="icon" href= /assets/favicon.ico>
     <script>
@@ -175,12 +177,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >wangzi blog</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">vuex的使用</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>wangzi blog</a>
 </header>
@@ -194,24 +207,61 @@
 
 
 
+height:50vh;
+
 >
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
+            vuex的使用
+            <!-- 404 -->
+            
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <!-- 文章页标签  -->
+            
+            <div class="post-intro-meta">
+                <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                <span class="post-intro-time">2018/05/08</span>
+                
+                <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                    <span class="iconfont-archer">&#xe602;</span>
+                    <span id="busuanzi_value_page_pv"></span>
+                </span>
+                
+                <span class="shareWrapper">
+                    <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                    <span class="shareText">Share</span>
+                    <ul class="shareList">
+                        <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                            <div class="share-qrcode"></div>
+                        </li>
+                        <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                        <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                        <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                        <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                    </ul>
+                </span>
+            </div>
         
     </div>
 </div>
@@ -295,199 +345,41 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/05/08/vuex的使用/" >
-                
-                    <span>vuex的使用</span>
-            </a>
-            <div class="abstract-content">
-                1：使用npm下载 vue  vuex2:  引入vue 和vuex3：在页面上创建实例vm  和vuex的实例  store12345678910111213141516171819202122232425262728const store = new Vuex.Store(&#123;state: &#123;count: 0&#125;,mutations: &#123;increment (state) &#123;state.count+=1&#125;&#125;,getters:&#123;&#125;&#125;)var vm=new Vue(&#123;el:'.app...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/08</span>
-                </div>
-                <!-- tags  -->
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/05/08/组件/" >
-                
-                    <span>组件</span>
-            </a>
-            <div class="abstract-content">
-                组件
-定义：是对一个完整功能模块的封装。他里面包含结构样式和行为，html css js.
-目的：为了提高代码的可复用性，提高代码可维护性，便于
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="1：使用npm下载-vue-vuex"><a href="#1：使用npm下载-vue-vuex" class="headerlink" title="1：使用npm下载 vue  vuex"></a>1：使用npm下载 vue  vuex</h2><h2 id="2-引入vue-和vuex"><a href="#2-引入vue-和vuex" class="headerlink" title="2:  引入vue 和vuex"></a>2:  引入vue 和vuex</h2><h2 id="3：在页面上创建实例vm-和vuex的实例-store"><a href="#3：在页面上创建实例vm-和vuex的实例-store" class="headerlink" title="3：在页面上创建实例vm  和vuex的实例  store"></a>3：在页面上创建实例vm  和vuex的实例  store</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">state: &#123;</span><br><span class="line">count: <span class="number">0</span></span><br><span class="line">&#125;,</span><br><span class="line">mutations: &#123;</span><br><span class="line">increment (state) &#123;</span><br><span class="line">state.count+=<span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;,</span><br><span class="line">getters:&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> vm=<span class="keyword">new</span> Vue(&#123;</span><br><span class="line">el:<span class="string">'.app'</span>,</span><br><span class="line">data:&#123;</span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line">store,</span><br><span class="line">methods:&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">把vuex挂载到vue上，这样所以的组件都能访问vuex的数据</span><br></pre></td></tr></table></figure>
+<h2 id="4：这个时候可以实现一些数据的相通了-比如在vue页面访问数据count-使用方法"><a href="#4：这个时候可以实现一些数据的相通了-比如在vue页面访问数据count-使用方法" class="headerlink" title="4：这个时候可以实现一些数据的相通了  比如在vue页面访问数据count   使用方法"></a>4：这个时候可以实现一些数据的相通了  比如在vue页面访问数据count   使用方法</h2><pre><code>{{$store.state.count}}       结果就是0  
+</code></pre><h2 id="5：点击事件获取count-并加1；"><a href="#5：点击事件获取count-并加1；" class="headerlink" title="5：点击事件获取count 并加1；"></a>5：点击事件获取count 并加1；</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;button @click=<span class="string">"add"</span>&gt;<span class="number">666</span>&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">原本写ad的逻辑会在里面直接获取count并+=1；是例如 this.$store.state.count+=1;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">但是vuex提供了另一种方法：即 提供给了第二个函数 increment  用它就行了 代码如下</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">methods:&#123;</span></span><br><span class="line"><span class="regexp">add()&#123;</span></span><br><span class="line"><span class="regexp">this.$store.commit("increment",10)    固定写法</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/这边点击的时候就会执行 increment 里面  方法名字就是  increment   就如不传参的话 结果就是每点击一次加一，传参数的话   在vuex的第二个函数中接收  每次接收加10；</span></span><br></pre></td></tr></table></figure>
+<h2 id="6-加入要使用一些方法的话就要用的第三个函数-getters-例如点击的时候把count平方"><a href="#6-加入要使用一些方法的话就要用的第三个函数-getters-例如点击的时候把count平方" class="headerlink" title="6: 加入要使用一些方法的话就要用的第三个函数 getters 例如点击的时候把count平方"></a>6: 加入要使用一些方法的话就要用的第三个函数 getters 例如点击的时候把count平方</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">ping(state)&#123;</span><br><span class="line"><span class="keyword">return</span> state.count *state.count</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">数据显示的话  调用方法  $store.getters.ping 即可</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">加入要调用其中一个函数的结果  就可以在函数里传第二个参数了</span><br><span class="line"></span><br><span class="line">li(state,getters)&#123;</span><br><span class="line"><span class="keyword">return</span> getters.ping * state.count</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">这边第二个参数是getters   可以调用里面的函数结果或者方法</span><br><span class="line">所以结果就是立方了  </span><br><span class="line">显示数据调用方法  $store.getters.li;</span><br></pre></td></tr></table></figure>
 
-####组件：是对功能的封装
-####模块：是对代码的封装
-####最基本的方式注册：1234567891011121314151617181920212223242526271全局：Vue.component( "模块名"，&#123;    template："&lt;div&gt; 这是我人生中的第一个模板  &lt;/div&gt;" &#125; )调用的时候，  直接写模板的标签即可 &lt;模块名&gt;&lt;/模块名&gt;...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/08</span>
-                </div>
-                <!-- tags  -->
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/05/08/vue第五部分/" >
-                
-                    <span>vue第五部分</span>
-            </a>
-            <div class="abstract-content">
-                ##路由：    根据不同的hash值，为页面对应显示不同的组件。
+    </article>
+    <!-- 前后页  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2018/05/08/组件/" title= 组件 >
+                    <div class="prevTitle">组件</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
 
-路由规则：hash值是如何对应组件的
-vue-rooter的使用
-1：指定路由规则
-2：指定显示的位置
+<!-- City版安装代码已完成 -->
+    
+    
+    <!--PC版-->
 
-步骤：1：创建vm实例2：创建路由模板3：配置路由的规则，创建路由对象4:  要将路由对象和vm实例关联起来5:  给路由匹配到的组件指定显示的位置  指的就是组件的占位符
+    <!--PC版-->
 
 
-12345678910111213141516171819202122232425262728293031321：var vm=new Vue(  &#123;        el:".app"      &#125;  )2:  let ...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/08</span>
-                </div>
-                <!-- tags  -->
-                
-            </div>
-        </article>
     
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/05/08/vue第四部分/" >
-                
-                    <span>vue第四部分</span>
-            </a>
-            <div class="abstract-content">
-                自定义指令：自己定义的指令起因 ：在vue中需要，不得不要dom操作时，就要使用自定义指令了。
-需求：需要页面加载获取input的焦点  focus
- 1234567891011121314151617181920 全局注册：Vue.directive  ( "指令名称"  ，&#123;         &#125;  )   指令名称不用加v-;bind（）&#123;el ,binding&#125;:只执行一次，在第一次被绑定到元素的时候调用inserted（）&#123;&#125;：只执行一次，当指令所在DOM元素被插入其父节点的时候调用；update（）&#123; &#1...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/08</span>
-                </div>
-                <!-- tags  -->
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/05/08/vue第三部分/" >
-                
-                    <span>vue第三部分</span>
-            </a>
-            <div class="abstract-content">
-                vue中的计算属性：computed计算属性是有缓存的。 不可以传参。
-
-computed里面写方法的函数12345简写:fullName()&#123;                    return this.firstName + '·' + this.lastName;                &#125; 这个时候调用的话返回的是两个数字的和  用v-model绑定函数名fullName即可；
-
-
-123456789101112131415161718192021222324完整写法：可以执行某些操作； 实现双向绑定fullName: &#123;          ...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/08</span>
-                </div>
-                <!-- tags  -->
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/05/08/vue第二部分/" >
-                
-                    <span>vue笔记第二部分</span>
-            </a>
-            <div class="abstract-content">
-                渐进式：只包括一些核心的功能，不像重量级angular功能啥都有，需要其他功能的时候，在用插件引入其他功能
-#####指令：自定义的HTML标签属性        作用：标记功能，当vue解析HTML代码的时候，遇到vue指令，就会实现特定的功能。
-v-show：控制元素的显示隐藏 通过控制元素的display属性控制; 用在切换显示比较频繁的位置
-#####v-if：
-可以控制元素的展示和隐藏，通过删除和创建元素控制；
-v-if:用在只要在进入页面之后进行一次判断的场景（管理员模块的显示和隐藏）
-v-pre ：主要用来跳过没有vue指令的HTML代码，加快效率
-v-once用来做性能优...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/08</span>
-                </div>
-                <!-- tags  -->
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/04/22/vue第一部分/" >
-                
-                    <span>vue first Day</span>
-            </a>
-            <div class="abstract-content">
-                MVC ：是一种软件架构模式，也有人叫设计模式，按照MVC规则将代码进行拆分之后，有利与代码的解耦，维护。
-M:model  和数据相关的所有代码都是M层的代码
-
-
-V：View  和展示相关的所有的代码都是V层的代码
-
-
-C:Controler  M层和V层进行数据交换的桥梁
-
-
-MVP:P presenter
-
-MVVM:VM view-model     双向数据绑定
-
-
-双向数据绑定
-如果 v-model用在复选框上，绑定数据上有两种值
-1：布尔值：可以控制复选框的选中状态
-2：数组：当选中复选框的时候，复选框的value值会存入数组中
-3 用在下拉框的时候，绑定的是value值...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/22</span>
-                </div>
-                <!-- tags  -->
-                
-            </div>
-        </article>
-    
-    <!-- paginator  -->
-    
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -560,6 +452,24 @@ MVVM:VM view-model     双向数据绑定
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1：使用npm下载-vue-vuex"><span class="toc-number">1.</span> <span class="toc-text">1：使用npm下载 vue  vuex</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-引入vue-和vuex"><span class="toc-number">2.</span> <span class="toc-text">2:  引入vue 和vuex</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3：在页面上创建实例vm-和vuex的实例-store"><span class="toc-number">3.</span> <span class="toc-text">3：在页面上创建实例vm  和vuex的实例  store</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4：这个时候可以实现一些数据的相通了-比如在vue页面访问数据count-使用方法"><span class="toc-number">4.</span> <span class="toc-text">4：这个时候可以实现一些数据的相通了  比如在vue页面访问数据count   使用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5：点击事件获取count-并加1；"><span class="toc-number">5.</span> <span class="toc-text">5：点击事件获取count 并加1；</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-加入要使用一些方法的话就要用的第三个函数-getters-例如点击的时候把count平方"><span class="toc-number">6.</span> <span class="toc-text">6: 加入要使用一些方法的话就要用的第三个函数 getters 例如点击的时候把count平方</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -903,6 +813,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
     
     </body>
 </html>
