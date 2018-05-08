@@ -10,7 +10,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
     <meta name="description" content="">
-    <title>git命令 · To Be No.1</title>
+    <title>vue第三部分 · To Be No.1</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -191,7 +191,7 @@
                 <a href="/" >wangzi blog</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">git命令</a>
+                <a href="#" class="post-name">vue第三部分</a>
             </div>
     </div>
     
@@ -223,7 +223,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            git命令
+            vue第三部分
             <!-- 404 -->
             
         </h1>
@@ -241,7 +241,7 @@ height:50vh;
             
             <div class="post-intro-meta">
                 <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                <span class="post-intro-time">2018/04/21</span>
+                <span class="post-intro-time">2018/05/08</span>
                 
                 <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                     <span class="iconfont-archer">&#xe602;</span>
@@ -347,131 +347,56 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h3 id="git-重置"><a href="#git-重置" class="headerlink" title="git 重置"></a>git 重置</h3><ul>
-<li><p>reset –hard    版本号    重置了这个版本，在所有区域都重置了</p>
-<p>  将来不小心误操作了，提交了，可以回退某个版本</p>
-</li>
-<li><p>reset –soft     版本号    只重置了仓库区</p>
-</li>
-<li><p>reset –mixed 版本号    重置，只剩下工作区 把暂存区和仓库区都重置了</p>
+        <h4 id="vue中的计算属性：computed"><a href="#vue中的计算属性：computed" class="headerlink" title="vue中的计算属性：computed"></a>vue中的计算属性：computed</h4><pre><code>计算属性是有缓存的。 不可以传参。
+</code></pre><ul>
+<li>computed里面写方法的函数<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">简写:</span><br><span class="line">fullName()&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="string">'·'</span> + <span class="keyword">this</span>.lastName;</span><br><span class="line">                &#125;</span><br><span class="line"> 这个时候调用的话返回的是两个数字的和  用v-model绑定函数名fullName即可；</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<hr>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> git 忽视文件（有的文件不希望git管理提交）</span><br><span class="line"></span><br><span class="line">* 在文件目录中创建一个  .gitignore </span><br><span class="line"></span><br><span class="line">* 把不想提交的文件名写在这个文件里即可</span><br><span class="line"></span><br><span class="line">* 把自己也写进去</span><br></pre></td></tr></table></figure>
-<h3 id="git-分支操作"><a href="#git-分支操作" class="headerlink" title="git 分支操作"></a>git 分支操作</h3><ul>
-<li><p>git branch 查看分支，master是默认的主分支</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">完整写法：可以执行某些操作； 实现双向绑定</span><br><span class="line">fullName: &#123;</span><br><span class="line">                    <span class="comment">//get方法其实就是给视图提供数据用的</span></span><br><span class="line">                    get() &#123;</span><br><span class="line">                        <span class="comment">//当要获取这个计算属性的值的时候，就会调用get方法</span></span><br><span class="line">                        <span class="comment">//get方法的返回值，就是最终获取到的属性值</span></span><br><span class="line">                        <span class="built_in">console</span>.log(<span class="string">"计算属性的get方法被调用功能了"</span>)</span><br><span class="line">                        <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="string">'·'</span> + <span class="keyword">this</span>.lastName;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">在绑定fullName的时候自动就调用了这些方法</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">set(value) &#123;</span><br><span class="line">                        <span class="comment">// 把value也就是当前input标签中的内容拆分开</span></span><br><span class="line">                        <span class="comment">// 分别给firstname和lastname</span></span><br><span class="line">                        <span class="keyword">var</span> names = value.split(<span class="string">"·"</span>);</span><br><span class="line">                        <span class="keyword">this</span>.firstName = names[<span class="number">0</span>];</span><br><span class="line">                        <span class="keyword">this</span>.lastName = names[<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">                        <span class="built_in">console</span>.log(<span class="string">"计算属性的set方法被调用功能了"</span>, value)</span><br><span class="line">                    &#125;</span><br><span class="line">这个是当视图改变的时候，对视图结果做的一些事情，value传进来的就是视图绑定的结果</span><br></pre></td></tr></table></figure>
+<p><img src="C:\Users\王子臣\Desktop\Image2.png" alt=""></p>
+<h4 id="vue的生命周期："><a href="#vue的生命周期：" class="headerlink" title="vue的生命周期："></a>vue的生命周期：</h4><ul>
+<li><p>1: new Vue 实例诞生</p>
 </li>
-<li><p>分支其实本质上就是一个指针</p>
+<li><p>2：初始化了声明周期和生命周期中的事件</p>
 </li>
-<li><p>当新提交了一个版本，当前的指针会指向最新生成的版本   当前颜色是绿色，有小菊花</p>
+<li><p>3：初始化数据</p>
 </li>
-</ul>
-<p>#####创建分支</p>
-<ul>
-<li><p>git branch login 新建一个登陆的分支</p>
+<li><p>4：检测是否有el选项</p>
 </li>
-<li><p>git branch 可以查看所有分支</p>
+<li><p>5：检测是否有template选项</p>
 </li>
-<li><p>git 中有一个HEAD指针永远指向当前分支</p>
+<li><p>6：no, 将el指向的元素的HTML代码编译成模板</p>
 </li>
-</ul>
-<p>#####切换分支</p>
-<ul>
-<li><p>git checkout login  切换分支为登陆的分支  在这之后，master分支都没有登陆功能，给客户看的时候就不会有bug</p>
+<li><p>7：将模板用数据填充，创建出来了vm.$el (有数据的HTML代码),接着用vm.$el把页面中的el所在位置的元素替换掉了</p>
 </li>
-<li><p>当登陆功能写完时，切换master分支   git checkout master</p>
+<li><p>8：此时页面已将进入了稳定的运行状态了此时开始监听数据的变化当数据发生变化的时候。vue更新页面内容继续监听</p>
 </li>
-<li><p>并且希望login的内容合并master分支上</p>
+<li><p>9：vue实例不会自然死亡 当我们调用vm.$destory方法的时候</p>
 </li>
-<li><p>git merge login 这样就何在一起了</p>
+<li><p>10：卸载所有的数据监听，组建，事件监听</p>
+</li>
+<li><p>11：vue实例挂了…</p>
 </li>
 </ul>
-<p>#####删除分支 </p>
-<ul>
-<li>git branch -d login (前提login要切换到其他分支，并合并才能删除)</li>
-</ul>
-<p>###创建分支的步骤：</p>
-<blockquote>
-<p>1：在写另一个功能不想被别人看到的时候先创建分支 git branch login</p>
-</blockquote>
-<blockquote>
-<p>2:要把新建的分支指向这个功能 git chekout login  然后这个时候就可以开始写代码了,然后写的代码包括一开始写的代码（master阶段），如果切换到master分支时，不会显示login分支的内容 </p>
-</blockquote>
-<blockquote>
-<p>3：最后写完了 把分支指向主分支 git checkout master</p>
-</blockquote>
-<blockquote>
-<p>4:最后要主分支master合并login即可  git merge login   这个时候login的内容和master一开始的内容就合并了</p>
-</blockquote>
-<blockquote>
-<p>5：这个时候分支就可以删除了 git branch -d login;</p>
-</blockquote>
-<blockquote>
-<p>git checkout -b 分支名  创建并且切换</p>
-</blockquote>
-<h3 id="多个分支合并的冲突问题"><a href="#多个分支合并的冲突问题" class="headerlink" title="多个分支合并的冲突问题"></a>多个分支合并的冲突问题</h3><ul>
-<li>git ：当先合并一个的时候，原理是指针会带着master指向那个分支，是祖辈分支可以快速合并，但是在继续合并其他分支的时候，由于分支带着master跑到了其他分支，再合并就不是祖辈关系了，导致合并冲突，不能快速合并</li>
-</ul>
-<p>解决方案：删除冲突产生的符号标记，并删除，然后重新add commit 就行了</p>
-<h3 id="git对比"><a href="#git对比" class="headerlink" title="git对比"></a>git对比</h3><ul>
-<li>查看工作区与暂存区的不同</li>
-</ul>
-<p>git diff</p>
-<ul>
-<li>查看暂存区与仓库区的不同</li>
-</ul>
-<p>git diff –cached</p>
-<ul>
-<li>查看工作区与仓库区的不同，HEAD表示最新的那次提交</li>
-</ul>
-<p>git diff HEAD</p>
-<ul>
-<li>查看两个版本之间的不同</li>
-</ul>
-<p>git diff c265262 de4845b</p>
-<p>###github常见项目</p>
-<ul>
-<li>克隆远程仓库</li>
-</ul>
-<p>git clone  仓库地址 文件夹名称</p>
-<ul>
-<li><p>提交到远程仓库</p>
-</li>
-<li><p>git push +地址 分支名（master）</p>
-</li>
-</ul>
-<p>提交过一次 再次提交可以把地址改为origin就行 （origin是克隆的时候保存下来的）</p>
-<ul>
-<li>git pull 获取远程仓库可以直接偷过来用</li>
-</ul>
-<ul>
-<li><p>git remote 查看地址的快捷名</p>
-</li>
-<li><p>git remote add bi别名 给地址增加其他的名字</p>
-</li>
-</ul>
-<ul>
-<li>SSH非对称加密</li>
-</ul>
-<p>私钥 个人</p>
-<p>公钥 GitHub</p>
-
+<p>####钩子函数：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//所有钩子函数的this指向都是指向当前实例vue</span></span><br><span class="line"><span class="comment">// 钩子函数的触发顺序和触发时机</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 1创建</span></span><br><span class="line"><span class="comment">// beforeCreate:初始化数据之前执行的（拿不到数据）</span></span><br><span class="line"><span class="comment">// create:初始化数据完成之后执行的（可以拿到数据）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 挂载</span></span><br><span class="line"><span class="comment">// beforeMount:当渲染好的页面元素被挂载到了页面之前调用（拿不到数据，dom,拿不到指令，未被解析的）</span></span><br><span class="line"><span class="comment">// mounted：当渲染好的页面被挂载到了页面之后调用（可以操作有数据的dom 了）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新</span></span><br><span class="line"><span class="comment">// beforeUpdate:当有数据发生变化，但dom还为未更新之前调用，此时如果访问dom拿到的内容还是旧内容</span></span><br><span class="line"><span class="comment">// updated: 当有数据发生变化，dom也更新完成之后调用，此时如果访问dom拿到的就是新内容了</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 销毁</span></span><br><span class="line"><span class="comment">// 当vm.$destory方法被调用的时候，vm对象就要销毁了</span></span><br><span class="line"><span class="comment">// 销毁指的是功能解除，不再做任何的数据绑定更新操作，但是vm对象还在</span></span><br><span class="line"><span class="comment">// beforeDestory:在功能销毁前调用</span></span><br><span class="line"><span class="comment">// destoyed: 在功能销毁后调用</span></span><br><span class="line"><span class="keyword">var</span> vm=<span class="keyword">new</span> Vue(&#123;</span><br><span class="line">el:<span class="string">'#app'</span>,</span><br><span class="line">data:&#123;</span><br><span class="line">msg:<span class="string">'Hello World'</span></span><br><span class="line">&#125;,</span><br><span class="line">beforeCreate()&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"beforeCreate被调用了"</span>, <span class="keyword">this</span>.msg)</span><br><span class="line">&#125;,</span><br><span class="line">created()&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Create被调用了"</span>, <span class="keyword">this</span>.msg)</span><br><span class="line">&#125;,</span><br><span class="line">beforeMount()&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"beforeMount被调用了"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>.querySelector(<span class="string">"#app"</span>).innerHTML);</span><br><span class="line">&#125;,</span><br><span class="line">mounted()&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Mount被调用了"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>.querySelector(<span class="string">"#app"</span>).innerHTML);</span><br><span class="line">&#125;,</span><br><span class="line">beforeUpdate()&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"beforeUpdate被调用了"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>.querySelector(<span class="string">"#app"</span>).innerHTML);</span><br><span class="line">&#125;,</span><br><span class="line">updated()&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Update被调用了"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>.querySelector(<span class="string">"#app"</span>).innerHTML);</span><br><span class="line">&#125;,</span><br><span class="line">beforeDestory()&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"beforeDestory被调用了"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>.querySelector(<span class="string">"#app"</span>).innerHTML);</span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="vue过滤器："><a href="#vue过滤器：" class="headerlink" title="vue过滤器："></a>vue过滤器：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">写法： &#123;&#123; msg  | 过滤器的名字 &#125;&#125;</span><br><span class="line">原理：把msg的数据进行修改显示</span><br><span class="line"></span><br><span class="line">filters:&#123;</span><br><span class="line">add(value)&#123;</span><br><span class="line"><span class="keyword">return</span> value*<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">add就是过滤器的名字，这个写的是局部过滤器，与全局过滤器同时存在时，会先找局部，再找全局。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">全局写法：</span><br><span class="line"></span><br><span class="line">Vue.filter(  <span class="string">"过滤器的名字"</span>   <span class="function"><span class="keyword">function</span>（<span class="title">value</span>）</span>&#123;  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  &#125;  )</span><br><span class="line"></span><br><span class="line">value：是进行修改的数据 通过参数传进来</span><br></pre></td></tr></table></figure>
+<h4 id="键值修饰符：keyup"><a href="#键值修饰符：keyup" class="headerlink" title="键值修饰符：keyup;"></a>键值修饰符：keyup;</h4><pre><code>作用：按下某个键的时候触发事件函数
+写法：v-on:keyup.键盘码=&quot;函数名&quot;   简写：@keyup.键盘码=&quot;函数名&quot;;
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">例： &lt;input type=<span class="string">"text"</span> @keyup.enter=<span class="string">"hl"</span>&gt;</span><br></pre></td></tr></table></figure>
+<pre><code>vue中有默认的键盘码，例如 enter space  esc
+自定义全局按键：Vue.config.keyCodes.键盘码名字 = 键盘码；
+</code></pre>
     </article>
     <!-- 前后页  -->
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2018/04/22/数组即字符串的常用方法/" title= 数组即字符串的常用方法 >
-                    <div class="nextTitle">数组即字符串的常用方法</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2018/04/21/前端模块化/" title= 前端模块化 >
-                    <div class="prevTitle">前端模块化</div>
+                <a href= "/2018/05/08/vue笔记第一部分/" title= vue笔记第二部分 >
+                    <div class="prevTitle">vue笔记第二部分</div>
                 </a>
             
         </li>
@@ -577,7 +502,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#git-重置"><span class="toc-number">1.</span> <span class="toc-text">git 重置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-分支操作"><span class="toc-number">2.</span> <span class="toc-text">git 分支操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多个分支合并的冲突问题"><span class="toc-number">3.</span> <span class="toc-text">多个分支合并的冲突问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git对比"><span class="toc-number">4.</span> <span class="toc-text">git对比</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#vue中的计算属性：computed"><span class="toc-number">1.</span> <span class="toc-text">vue中的计算属性：computed</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vue的生命周期："><span class="toc-number">2.</span> <span class="toc-text">vue的生命周期：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vue过滤器："><span class="toc-number">3.</span> <span class="toc-text">vue过滤器：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#键值修饰符：keyup"><span class="toc-number">4.</span> <span class="toc-text">键值修饰符：keyup;</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
