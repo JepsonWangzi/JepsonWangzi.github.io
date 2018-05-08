@@ -300,6 +300,40 @@
     
     
         <article class="index-post">
+            <a class="abstract-title" href = "/2018/05/08/浏览器的兼容行问题/" >
+                
+                    <span>浏览器的兼容行问题</span>
+            </a>
+            <div class="abstract-content">
+                ####兼容的相关问题，针对IE678；
+####解决浏览器兼容性的处理方式：
+
+代理检测
+怪癖检测
+能力检测(you can you up,no can shut up)
+
+###1:在IE678中，并没有pageX与pageY，但是我们可以通过scrollTop + clientY的方式进行计算来获得。
+1234567function getPage(event) &#123;    return &#123;          //在IE678中使用document.documentElement.scrollLeft就可以获取到scrollTop的值        x:event...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/08</span>
+                </div>
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "js">js</a>
+    
+</div>
+                
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
             <a class="abstract-title" href = "/2018/05/08/浮动总结/" >
                 
                     <span>浮动总结</span>
@@ -545,29 +579,6 @@ MVVM:VM view-model     双向数据绑定
 ##### 图层：图层本质上就可以看做是一张一张相同大小透明的纸，一个完整图像本质上是由一个又一个的图层堆叠而成
 
 有了图层可以方便我们...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/22</span>
-                </div>
-                <!-- tags  -->
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/04/22/数组即字符串的常用方法/" >
-                
-                    <span>数组即字符串的常用方法</span>
-            </a>
-            <div class="abstract-content">
-                ##数组的方法
-1：数组的翻转123var arr = [9,8,4,12,45,72,100,120];var newArr = arr.reverse();返回的是反    转后的数组，原来的数组也被翻转了
-2：排序1234var sortedArr = arr.sort(function (a, b) &#123;// return a- b; //升序排列return b - a; //降序排列&#125;);
-3：数组的拼接123456var arr1 = [1, 2, 3, 4, 5];var arr2 = [&quot;hello&quot;, &quot;hi&quot;...
             </div>
             <div class="abstract-post-meta">
                 <!-- date  -->
@@ -841,7 +852,14 @@ MVVM:VM view-model     双向数据绑定
     
     
     
-    <div class="total-archive"> Total : 15 </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-archive"> Total : 16 </div>
     
     <div class="post-archive">
     
@@ -858,12 +876,22 @@ MVVM:VM view-model     双向数据绑定
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">05/08</span><a class="archive-post-title" href= "/2018/05/08/浏览器的兼容行问题/" >浏览器的兼容行问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">05/08</span><a class="archive-post-title" href= "/2018/05/08/组件/" >组件</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">05/08</span><a class="archive-post-title" href= "/2018/05/08/浮动总结/" >浮动总结</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/08</span><a class="archive-post-title" href= "/2018/05/08/vue第五部分/" >vue第五部分</a>
         </li>
     
     
@@ -878,17 +906,7 @@ MVVM:VM view-model     双向数据绑定
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/08</span><a class="archive-post-title" href= "/2018/05/08/vue第五部分/" >vue第五部分</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">05/08</span><a class="archive-post-title" href= "/2018/05/08/vue第二部分/" >vue笔记第二部分</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/22</span><a class="archive-post-title" href= "/2018/04/22/FW切图工具/" >FW切图工具</a>
         </li>
     
     
@@ -926,12 +944,17 @@ MVVM:VM view-model     双向数据绑定
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2018/04/21/前端模块化/" >前端模块化</a>
+            <span class="archive-post-date">04/22</span><a class="archive-post-title" href= "/2018/04/22/FW切图工具/" >FW切图工具</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2018/04/21/git命令/" >git命令</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2018/04/21/前端模块化/" >前端模块化</a>
         </li>
     
     
@@ -948,6 +971,8 @@ MVVM:VM view-model     双向数据绑定
   </div>
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="js"><span class="iconfont-archer">&#xe606;</span>js</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -982,17 +1007,17 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="css"><span class="iconfont-archer">&#xe60a;</span>css</span>
-    
         <span class="sidebar-category-name" data-categories="git专题"><span class="iconfont-archer">&#xe60a;</span>git专题</span>
+    
+        <span class="sidebar-category-name" data-categories="css"><span class="iconfont-archer">&#xe60a;</span>css</span>
     
         <span class="sidebar-category-name" data-categories="hexo"><span class="iconfont-archer">&#xe60a;</span>hexo</span>
     
         <span class="sidebar-category-name" data-categories="Vue"><span class="iconfont-archer">&#xe60a;</span>Vue</span>
     
-        <span class="sidebar-category-name" data-categories="js"><span class="iconfont-archer">&#xe60a;</span>js</span>
-    
         <span class="sidebar-category-name" data-categories="node-js"><span class="iconfont-archer">&#xe60a;</span>node-js</span>
+    
+        <span class="sidebar-category-name" data-categories="js"><span class="iconfont-archer">&#xe60a;</span>js</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
