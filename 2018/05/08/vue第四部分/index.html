@@ -10,7 +10,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
     <meta name="description" content="">
-    <title>To Be No.1</title>
+    <title>vue第四部分 · To Be No.1</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -65,6 +65,8 @@
 
     <link rel="preload" href= /css/style.css?v=20180317 as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" type="text/css" href= /css/mobile.css?v=20180317 media="(max-width: 980px)"/>
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         
     <link rel="icon" href= /assets/favicon.ico>
     <script>
@@ -175,12 +177,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >wangzi blog</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">vue第四部分</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>wangzi blog</a>
 </header>
@@ -194,24 +207,61 @@
 
 
 
+height:50vh;
+
 >
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
+            vue第四部分
+            <!-- 404 -->
+            
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <!-- 文章页标签  -->
+            
+            <div class="post-intro-meta">
+                <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                <span class="post-intro-time">2018/05/08</span>
+                
+                <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                    <span class="iconfont-archer">&#xe602;</span>
+                    <span id="busuanzi_value_page_pv"></span>
+                </span>
+                
+                <span class="shareWrapper">
+                    <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                    <span class="shareText">Share</span>
+                    <ul class="shareList">
+                        <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                            <div class="share-qrcode"></div>
+                        </li>
+                        <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                        <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                        <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                        <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                    </ul>
+                </span>
+            </div>
         
     </div>
 </div>
@@ -295,45 +345,72 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h4 id="自定义指令：自己定义的指令"><a href="#自定义指令：自己定义的指令" class="headerlink" title="自定义指令：自己定义的指令"></a>自定义指令：自己定义的指令</h4><pre><code>起因 ：在vue中需要，不得不要dom操作时，就要使用自定义指令了。
+需求：需要页面加载获取input的焦点  focus
+</code></pre> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> 全局注册：</span><br><span class="line">Vue.directive  ( <span class="string">"指令名称"</span>  ，&#123;   </span><br><span class="line"></span><br><span class="line">      </span><br><span class="line"></span><br><span class="line">&#125;  )   </span><br><span class="line"></span><br><span class="line">指令名称不用加v-;</span><br><span class="line">bind（）&#123;el ,binding&#125;:只执行一次，在第一次被绑定到元素的时候调用</span><br><span class="line"></span><br><span class="line">inserted（）&#123;&#125;：只执行一次，当指令所在DOM元素被插入其父节点的时候调用；</span><br><span class="line"></span><br><span class="line">update（）&#123; &#125;：当指令绑定的数据发生变化的时候，就会调用这个函数，dom还没有更新</span><br><span class="line"></span><br><span class="line">componentUpdated（）&#123; &#125;:数据发生变化，DOM更新之后调用</span><br><span class="line"></span><br><span class="line">unbind（）&#123; &#125;：解绑指令</span><br><span class="line"></span><br><span class="line"><span class="comment">// el  绑定的dom元素</span></span><br><span class="line"><span class="comment">// binding 指令的信息</span></span><br></pre></td></tr></table></figure>
+<pre><code>自定义属性的简写：
+Vue.directive(   &quot;指令名称&quot;    function  （ el binding  ） { 
+
+    这里面只能写 bind 和update阶段相同代码的情况下写。同时执行。
+
+} )
+</code></pre><p>####指令的标准格式：<br>        指令名称：参数.修饰符=“表达式” 指令书写的时候。</p>
+<pre><code>        各个内容都可以用binding拿取到
+binding.name 指令的名称
+binding.rawName: =冒号左面的所有字符串
+binding.expresion: 指令的表达式，是字符串
+binding.value:指令的表达式的值
+binding.arg:指的是参数信息， 冒号中的信息
+binding.modifiers:存的是修饰符信息，所有修饰符都会被当作属性
+</code></pre><h4 id="监视功能：监听数据变化"><a href="#监视功能：监听数据变化" class="headerlink" title="监视功能：监听数据变化"></a>监视功能：监听数据变化</h4><pre><code>beforeUpdate :可以监听数据变化，但是不知道谁变了；
+watch：用来监听特定的数据；
+</code></pre> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">        假如数据是msg</span><br><span class="line">监听msg</span><br><span class="line">watch:&#123;</span><br><span class="line"></span><br><span class="line">  msg(newValue,oldValue)&#123;  </span><br><span class="line"></span><br><span class="line">   这里面执行数据变化处理的逻辑</span><br><span class="line"></span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">两个参数：是改变之后和之前的值</span><br></pre></td></tr></table></figure>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> 假如监听的对象里的属性，怎么获取？</span><br><span class="line"></span><br><span class="line"><span class="string">"obj.msg"</span> :<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">---------------------------------------------------</span><br><span class="line"></span><br><span class="line">深度监视：</span><br><span class="line">obj:&#123;</span><br><span class="line"></span><br><span class="line">handle（nv,ov）&#123;&#125;,</span><br><span class="line">deep:<span class="literal">true</span>     ----------深度监视开启，默认是<span class="literal">false</span></span><br><span class="line">immediate：<span class="literal">true</span>---------会在监视一生效就直接执行一次，默认是<span class="literal">false</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj传对象</span><br><span class="line">handle是执行数据变化的函数</span><br><span class="line">deep：开启深度监视</span><br><span class="line">immediate：开启时就直接执行一次深度监视，不常用</span><br><span class="line"></span><br><span class="line"> <span class="string">`</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### computed和waich的区别：</span><br><span class="line"></span><br><span class="line">    ​    computed只是为了提供数据的；</span><br><span class="line"></span><br><span class="line">    ​    watch是需要在数据发生变化的时候做的某些操作</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### 动画：</span><br><span class="line">* v-enter：</span><br><span class="line">* v-enter-to：</span><br><span class="line">* v-leave：</span><br><span class="line">* v-leave-to：</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        写多组动画，v可以被替换，需要指定transition的name值；</span><br><span class="line">        把要动画的元素用transition标签包裹就可以用了</span><br><span class="line"></span><br><span class="line">````js</span><br><span class="line">        &lt;transition enter-active-class=&quot;animated swing&quot;</span><br><span class="line">        leave-active-class=&quot;animated zoomOutUp&quot;&gt;</span><br><span class="line"></span><br><span class="line">            &lt;div class=&quot;box&quot; v-show=&quot;isShow&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">     &lt;/transition&gt;</span><br><span class="line">     `</span><br></pre></td></tr></table></figure>
+<p>红色：盒子进入和离开的动画  固定写法，动画名可以更改</p>
+<h3 id="SP-单页面应用：整个网站只有一个页面"><a href="#SP-单页面应用：整个网站只有一个页面" class="headerlink" title="SP : 单页面应用：整个网站只有一个页面"></a>SP : 单页面应用：整个网站只有一个页面</h3><pre><code>这边一个页面只有一个地址，实现跳转 使用hash值
+hash值：url地址中#后面的内容，改变hash值，页面不刷新；
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onhashchange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">// alert(location.hash);</span></span><br><span class="line">        <span class="comment">//根据用户访问的hash值，改变页面上展示的内容</span></span><br><span class="line"></span><br><span class="line">       监听hash值的变化，从而改变页面</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="vue-实现单页面的跳转"><a href="#vue-实现单页面的跳转" class="headerlink" title="vue 实现单页面的跳转"></a>vue 实现单页面的跳转</h4><ul>
+<li><p>1：把每个网页做成一个组件取好名字</p>
+</li>
+<li><p>2：创建实例，给页面一个默认的界面</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;component :is=<span class="string">"loc"</span>&gt;&lt;/component&gt;</span><br><span class="line"></span><br><span class="line">固定写法，component这个标签可以自动读取一个组件</span><br><span class="line">loc是默认的数据变量，值为index 页就是首页</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>3：在created函数里监听hash值的变化</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">created()&#123;</span><br><span class="line">                <span class="keyword">this</span>.loc = location.hash.slice(<span class="number">2</span>);</span><br><span class="line">                </span><br><span class="line">                <span class="built_in">window</span>.onhashchange = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                    <span class="keyword">this</span>.loc = location.hash.slice(<span class="number">2</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+    </article>
+    <!-- 前后页  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2018/05/08/vue第三部分/" title= vue第三部分 >
+                    <div class="prevTitle">vue第三部分</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
     
+    <!--PC版-->
+
+    <!--PC版-->
+
+
     
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/04/21/前端模块化/" >
-                
-                    <span>前端模块化</span>
-            </a>
-            <div class="abstract-content">
-                前端模块化
-1 前提在使用模块化之前，在当前页面引入插件require.js
-
-
-1: 定义模块：语法define（“模块名”，[依赖项]，function（）{
-
-模块的全部代码cosole(我是A模块哈哈)}）
-模块名一般建议不写，叫做匿名模块  还要起名字的叫做（具名模块）；
-
-2:引入模块：语法
-
-require（[模块名，写明路径]），function（）{模块引入完成时调用 执行这里面
-的代码（异步）console。log（我是A模块哈哈）}）
-模块名不要.js后缀
-定义，并且引入过后，主要执行的结果是我是A模块哈哈我是A模块哈哈
-但是 由于定于的模块是一个闭包，调用完成后就...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/21</span>
-                </div>
-                <!-- tags  -->
-                
-            </div>
-        </article>
-    
-    <!-- paginator  -->
-    
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -406,6 +483,24 @@ require（[模块名，写明路径]），function（）{模块引入完成时�
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义指令：自己定义的指令"><span class="toc-number">1.</span> <span class="toc-text">自定义指令：自己定义的指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#监视功能：监听数据变化"><span class="toc-number">2.</span> <span class="toc-text">监视功能：监听数据变化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SP-单页面应用：整个网站只有一个页面"><span class="toc-number"></span> <span class="toc-text">SP : 单页面应用：整个网站只有一个页面</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vue-实现单页面的跳转"><span class="toc-number">1.</span> <span class="toc-text">vue 实现单页面的跳转</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -680,6 +775,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
     
     </body>
 </html>
